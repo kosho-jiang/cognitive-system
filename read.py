@@ -34,7 +34,15 @@ def load_and_split_text(file_path: str, delimiter: str = "。") -> list[dict]:
 
 # 使用例
 if __name__ == "__main__":
-    file_path = "example (1).txt"  # テキストファイルのパスを指定
+    file_path = "testcases/read1.txt"  # テキストファイルのパスを指定
     result = load_and_split_text(file_path)
     for item in result:
         print(f"Index: {item['index']}, Sentence: {item['sentence']}")
+        output_file_path = "testcases/output.txt"
+        try:
+            with open(output_file_path, 'w', encoding='utf-8') as output_file:
+                for item in result:
+                    output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}\n")
+            print(f"Output written to {output_file_path}")
+        except Exception as e:
+            print(f"An error occurred while writing to the file: {e}")
