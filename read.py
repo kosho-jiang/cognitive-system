@@ -1,8 +1,9 @@
-#改行フラグ・文字数あり
+#改行フラグ・文字数・句点なし改行あり
 def load_and_split_text_with_length(file_path: str, delimiter: str = "。") -> list[dict]:
     """
     テキストファイルを読み込み、指定した区切り文字で分割し、
     改行があるたびにその後の最初の文にフラグを立て、各文の長さを記録する。
+    改行で区切られた文に句点がない場合は末尾に句点を付けない。
 
     引数:
         file_path (str): テキストファイルのパス。
@@ -15,7 +16,7 @@ def load_and_split_text_with_length(file_path: str, delimiter: str = "。") -> l
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
-
+        
         # 改行でテキストを分割
         lines = text.split("\n")
         result = []
@@ -31,12 +32,21 @@ def load_and_split_text_with_length(file_path: str, delimiter: str = "。") -> l
                     is_first_line = idx == 0
                     # 文の長さを計算
                     sentence_length = len(clean_sentence)
-                    result.append({
-                        "index": index,
-                        "sentence": clean_sentence + delimiter if delimiter not in clean_sentence else clean_sentence,
-                        "is_first_line": is_first_line,
-                        "length": sentence_length
-                    })
+                    # 改行のみの文には句点を追加しない
+                    if idx == len(sentences) - 1 and clean_sentence and delimiter not in clean_sentence:
+                        result.append({
+                            "index": index,
+                            "sentence": clean_sentence,  # 句点を追加しない
+                            "is_first_line": is_first_line,
+                            "length": sentence_length
+                        })
+                    else:
+                        result.append({
+                            "index": index,
+                            "sentence": clean_sentence + delimiter if delimiter not in clean_sentence else clean_sentence,
+                            "is_first_line": is_first_line,
+                            "length": sentence_length
+                        })
                     index += 1
 
         return result
