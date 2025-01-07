@@ -5,6 +5,7 @@ from openai import OpenAI
 client = OpenAI()
 
 OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
 def generate_next_text(api_key, previous_text, next_text_length):
     openai.api_key = api_key
     print(openai.api_key)
