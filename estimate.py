@@ -8,7 +8,6 @@ OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 def generate_next_text(api_key, previous_text, next_text_length):
     openai.api_key = api_key
-    print(openai.api_key)
 
     prompt = (
         f"以下は文脈に基づく文章生成です。前の文章を考慮しながら、次の文章を{next_text_length}文字程度で作成してください:\n"
