@@ -1,27 +1,41 @@
+#改行フラグあり
 def load_and_split_text(file_path: str, delimiter: str = "。") -> list[dict]:
     """
-    テキストファイルを読み込み、指定した区切り文字で分割する。
+    テキストファイルを読み込み、指定した区切り文字で分割し、
+    改行があるたびにその後の最初の文にフラグを立てる。
 
     引数:
         file_path (str): テキストファイルのパス。
         delimiter (str): 区切り文字（デフォルトは句点 "。"）。
 
     戻り値:
-        list[dict]: インデックスと文章を含むリスト。
-            例: [{"index": 0, "sentence": "文章1"}, {"index": 1, "sentence": "文章2"}]
+        list[dict]: インデックス、文章、改行フラグを含むリスト。
+            例: [{"index": 0, "sentence": "文章1", "is_first_line": True}, ...]
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
         
-        # 区切り文字で分割してインデックスを付ける
-        sentences = text.split(delimiter)
-        # 空白の文を除外し、辞書形式でリストに格納
-        result = [
-            {"index": idx, "sentence": sentence.strip() + delimiter if sentence.strip() else ""}
-            for idx, sentence in enumerate(sentences) if sentence.strip()
-        ]
-        
+        # 改行でテキストを分割
+        lines = text.split("\n")
+        result = []
+        index = 0  # 文全体のインデックス
+
+        for line in lines:
+            # 各行を指定した区切り文字で分割
+            sentences = line.split(delimiter)
+            for idx, sentence in enumerate(sentences):
+                clean_sentence = sentence.strip()
+                if clean_sentence:
+                    # 改行後最初の文にフラグを立てる
+                    is_first_line = idx == 0
+                    result.append({
+                        "index": index,
+                        "sentence": clean_sentence + delimiter if delimiter not in clean_sentence else clean_sentence,
+                        "is_first_line": is_first_line
+                    })
+                    index += 1
+
         return result
 
     except FileNotFoundError:
@@ -37,12 +51,10 @@ if __name__ == "__main__":
     file_path = "testcases/read1.txt"  # テキストファイルのパスを指定
     result = load_and_split_text(file_path)
     for item in result:
-        print(f"Index: {item['index']}, Sentence: {item['sentence']}")
+        print(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}")
+
         output_file_path = "testcases/output.txt"
-        try:
-            with open(output_file_path, 'w', encoding='utf-8') as output_file:
-                for item in result:
-                    output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}\n")
-            print(f"Output written to {output_file_path}")
-        except Exception as e:
-            print(f"An error occurred while writing to the file: {e}")
+        with open(output_file_path, 'w', encoding='utf-8') as output_file:
+            for item in result:
+                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}\n")
+        print(f"Output written to {output_file_path}")
