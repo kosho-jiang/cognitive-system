@@ -1,5 +1,5 @@
 # cognitive-system
-認識システムのGroup10のrepository
+Group10's repository
 
 ## Before Using OpenAI-API
 
@@ -13,6 +13,18 @@
 ```echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc```  
 ```source ~/.zshrc```
 
-## 乖離度計算
+## calculating the disassociation
 
-```pip install sentence-transformers```
+```pip install sentence-transformers```  
+```pip install fugashi```  
+```pip install unidic-lite```  
+
+# sentence-transformer model
+We used  
+
+- Model Name: `sonoisa/sentence-bert-base-ja-mean-tokens-v2`
+- [https://huggingface.co/sonoisa/sentence-bert-base-ja-mean-tokens-v2]
+- Provider: [sonoisa](https://huggingface.co/sonoisa)
+- License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+
