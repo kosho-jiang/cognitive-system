@@ -10,7 +10,7 @@ def load_and_split_text(file_path: str, delimiter: str = "。") -> list[dict]:
 
     戻り値:
         list[dict]: インデックス、文章、改行フラグを含むリスト。
-            例: [{"index": 0, "sentence": "文章1", "is_first_line": True}, ...]
+            例: [{"index": 0, "sentence": "文章1", "isfirst": True}, ...]
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -28,11 +28,11 @@ def load_and_split_text(file_path: str, delimiter: str = "。") -> list[dict]:
                 clean_sentence = sentence.strip()
                 if clean_sentence:
                     # 改行後最初の文にフラグを立てる
-                    is_first_line = idx == 0
+                    isfirst = idx == 0
                     result.append({
                         "index": index,
                         "sentence": clean_sentence + delimiter if delimiter not in clean_sentence else clean_sentence,
-                        "is_first_line": is_first_line
+                        "isfirst": isfirst
                     })
                     index += 1
 
@@ -51,10 +51,10 @@ if __name__ == "__main__":
     file_path = "testcases/read1.txt"  # テキストファイルのパスを指定
     result = load_and_split_text(file_path)
     for item in result:
-        print(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}")
+        print(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['isfirst']}")
 
         output_file_path = "testcases/output.txt"
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             for item in result:
-                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}\n")
+                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['isfirst']}\n")
         print(f"Output written to {output_file_path}")
