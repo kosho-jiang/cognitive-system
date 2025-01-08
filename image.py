@@ -11,7 +11,8 @@ def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
-def image_to_text(image_path: str) -> str:
+def image_to_text(api_key, image_path: str) -> str:
+    openai.api_key = api_key
     try:
         image = encode_image(image_path)
         prompt = (
@@ -34,5 +35,5 @@ def image_to_text(image_path: str) -> str:
 
 if __name__ == "__main__":
     image_path = 'testcases/onepiece.png'  # 適切な画像パスに置き換えてください
-    result = image_to_text(image_path)
+    result = image_to_text(OpenAI_API_KEY,image_path)
     print(result)
