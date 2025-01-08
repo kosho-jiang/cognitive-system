@@ -1,4 +1,5 @@
 import os
+#import openai
 
 from similarity import calculate_similarity    
 from read import load_and_split_text_with_length
