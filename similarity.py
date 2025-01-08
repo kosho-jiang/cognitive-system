@@ -34,7 +34,7 @@ def calculate_similarity(apikey, previous_text, next_text, next_text_length, isb
     
     else:
         prompt = (
-        "以下の二つの文章は、予想されたものと実際のものです。独自の方法を用いて類似度を小数点第5位まで計算してください。出力は数字だけで結構です。\n"
+        "以下の二つの文章は、予想されたものと実際のものです。独自の方法を用いて類似度を小数点第5位(float型)まで計算してください。出力は数字だけで結構です。\n"
         f"予想された文章:\n{next_text_genrated}\n"
         f"実際の文章:\n{next_text}\n"
         "類似度:\n")
@@ -47,7 +47,7 @@ def calculate_similarity(apikey, previous_text, next_text, next_text_length, isb
                     {"role": "user", "content": prompt}
              ],
          )
-            content = response.choices[0].message.content
+            content = float(response.choices[0].message.content)
             return content
     
         except Exception as e:

@@ -16,11 +16,11 @@ COLUMN_WIDTH = 25  # 列幅（mm -> pt）
 LINE_SPACING = 5  # 行間（pt）文字と文字の間の間隔を調整する。
 #スコアとフォントサイズの関係を調節できる。
 FONT_MAPPING = {
-    0.0: 10,
-    0.2: 12,
-    0.4: 14,
-    0.6: 16,
-    0.8: 18,
+    0.0: 6,
+    0.3: 9,
+    0.4: 12,
+    0.5: 15,
+    0.6: 18,
     1.0: 20,
 }
 #フォントをこだわりたかったら変更する。ただし、これ以外のやつはダウンロードしないといけないので面倒。
@@ -47,7 +47,7 @@ def create_pdf(data, output_file):
     column_y = y_offset
 
     for entry in data:
-        text = entry["sentences"]
+        text = entry["sentence"]
         score = entry["score"]
         font_size = get_font_size(score)
 
