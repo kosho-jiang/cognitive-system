@@ -16,7 +16,7 @@ isbert:True -> sentence-transformersを用いて意味的埋め込みを計算
 isbert:False -> GPT-4o-miniに丸投げして類似度を計算
 """
 
-def calculate_kairido(apikey, previous_text, next_text, next_text_length, isbert):
+def calculate_similarity(apikey, previous_text, next_text, next_text_length, isbert):
     
     next_text_genrated = generate_next_text(apikey, previous_text, next_text_length)  
     if isbert:  
@@ -60,8 +60,8 @@ if __name__ == "__main__":
     next_text_length = 55
     isbert = False
 
-    kairido = calculate_kairido(OpenAI_API_KEY, previous_text, next_text, next_text_length, isbert)
-    print("類似度:", kairido)
+    similarity = calculate_similarity(OpenAI_API_KEY, previous_text, next_text, next_text_length, isbert)
+    print("類似度:", similarity)
 
 
 
