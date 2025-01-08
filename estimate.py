@@ -6,13 +6,11 @@ client = OpenAI()
 
 OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
-arasuji = False
-
-def generate_next_text(api_key, previous_text, next_text_length, arasuji):
+def generate_next_text(api_key, previous_text, next_text_length, isarasuji = False):
     openai.api_key = api_key
     arasuji_path = "testcases/arasuji.txt"
 
-    if arasuji == False:
+    if isarasuji == False:
         prompt = (
             f"以下は文脈に基づく文章生成です。前の文章を考慮しながら、次の文章をほぼ{next_text_length}文字で作成してください:\n"
             f"前の文章:\n{previous_text}\n"
@@ -50,3 +48,7 @@ if __name__ == "__main__":
 
     next_text = generate_next_text(OpenAI_API_KEY, previous_text, next_text_length)
     print("生成された次の文章:", next_text)
+
+
+"""漫画のコマの衝撃度"""
+"""各コマを説明させて、コマごとの衝撃度を測る"""
