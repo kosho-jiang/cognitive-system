@@ -69,5 +69,6 @@ def create_pdf(data, output_file):
 
     c.save()
 
-# 実行
-create_pdf(data, "output.pdf")
+
+if __name__ == "__main__":
+    create_pdf(data, "output.pdf")
