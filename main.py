@@ -10,21 +10,23 @@ text = load_and_split_text_with_length("testcases/usakusai.txt")
 OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]   
 
 if __name__ == "__main__":  
+    scoresum = 0
     for i in range(len(text)):
         if i == len(text) - 1:
             break
 
         else:
-            text[0]['score'] = 0.5
             previous_text_list = [item['sentence'] for item in text[0:i+1]]
             previous_text = '。'.join(previous_text_list)
             next_text_length = text[i+1]['length']            
-            estimate_text = generate_next_text(OpenAI_API_KEY, previous_text, next_text_length)
 
-            similarity = calculate_similarity(OpenAI_API_KEY, text[i+1]['sentence'], estimate_text, next_text_length, False)
+            similarity = calculate_similarity(OpenAI_API_KEY, text[i]['sentence'], text[i+1]['sentence'], next_text_length, True)
             print(similarity)
             text[i+1]['score'] = similarity
-            i = i + 1        
+            scoresum += similarity
+            i = i + 1     
+
+        text[0]['score'] = scoresum/len(text)   
 
     print(text)
 

@@ -16,9 +16,9 @@ isbert:True -> sentence-transformersを用いて意味的埋め込みを計算
 isbert:False -> GPT-4o-miniに丸投げして類似度を計算
 """
 
-def calculate_similarity(apikey, previous_text, next_text, next_text_length, isbert):
+def calculate_similarity(apikey, previous_text, next_text, next_text_length, isbert, arasuji=False):
     
-    next_text_genrated = generate_next_text(apikey, previous_text, next_text_length)  
+    next_text_genrated = generate_next_text(apikey, previous_text, next_text_length, arasuji)  
     if isbert:  
         model = SentenceTransformer('sonoisa/sentence-bert-base-ja-mean-tokens-v2')
 
@@ -30,7 +30,7 @@ def calculate_similarity(apikey, previous_text, next_text, next_text_length, isb
         print("実際の次の文章:", next_text)
         print("生成された文章:", next_text_genrated)
 
-        return similarity[0][0]  
+        return 1-similarity[0][0]  
     
     else:
         prompt = (
@@ -48,7 +48,7 @@ def calculate_similarity(apikey, previous_text, next_text, next_text_length, isb
              ],
          )
             content = float(response.choices[0].message.content)
-            return content
+            return 1-content
     
         except Exception as e:
             print(f"Error: {e}")
