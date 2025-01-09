@@ -16,7 +16,7 @@ def image_to_text(api_key, image_path: str) -> str:
     try:
         image = encode_image(image_path)
         prompt = (
-            f"画像は漫画の一ページです．その内容を小説調で説明する文章を生成してください:\n"
+            f"画像は漫画の一ページです．その内容を各コマについて小説調で説明する文章を40文字程度生成してください:\n"
         )
         response = client.chat.completions.create(
             model="gpt-4o-mini",

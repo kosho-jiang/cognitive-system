@@ -36,5 +36,5 @@ if __name__ == "__main__":
     openai_api_key = os.environ.get("OPENAI_API_KEY")
 
     # グラフをプロット
-    plot_scores_from_main(file_path, openai_api_key, isarasuji=False, isbert=False)
+    plot_scores_from_main(file_path, openai_api_key, isarasuji=True, isbert=False)
 

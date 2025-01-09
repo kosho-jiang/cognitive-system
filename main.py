@@ -21,7 +21,6 @@ def main (text, OpenAI_API_KEY, isarasuji, isbert):
             next_text_length = text[i+1]['length']            
 
             similarity = calculate_similarity(OpenAI_API_KEY, previous_texts, text[i+1]['sentence'], next_text_length,isbert, isarasuji)
-            print(similarity)
             text[i+1]['score'] = similarity
             scoresum += similarity
             i = i + 1     

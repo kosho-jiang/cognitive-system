@@ -19,6 +19,9 @@ isbert:False -> GPT-4o-miniに丸投げして類似度を計算
 def calculate_similarity(apikey, previous_texts, next_text, next_text_length, isbert, isarasuji=False):
     
     next_text_genrated = generate_next_text(apikey, previous_texts, next_text_length, isarasuji)  
+    print("実際の次の文章:", next_text)
+    print("生成された文章:", next_text_genrated)
+
     if isbert:  
         model = SentenceTransformer('sonoisa/sentence-bert-base-ja-mean-tokens-v2')
 
@@ -26,9 +29,6 @@ def calculate_similarity(apikey, previous_texts, next_text, next_text_length, is
         embedding2 = model.encode(next_text)
 
         similarity = cosine_similarity([embedding1], [embedding2])
-
-        print("実際の次の文章:", next_text)
-        print("生成された文章:", next_text_genrated)
 
         return 1-similarity[0][0]  
     
