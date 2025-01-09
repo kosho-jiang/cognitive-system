@@ -7,9 +7,8 @@ client = OpenAI()
 
 OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
-def generate_next_text(api_key, previous_text, next_text_length, isarasuji = False):
+def generate_next_text(api_key, previous_text, next_text_length, isarasuji = False, arasujipath=None):
     openai.api_key = api_key
-    arasuji_path = "testcases/shanks/shanks_arasuji.txt"
 
     if isarasuji == False:
         prompt = (
@@ -18,10 +17,11 @@ def generate_next_text(api_key, previous_text, next_text_length, isarasuji = Fal
             "次の文章:\n"
         )
     else:
+        arasuji_path = arasujipath
         with open(arasuji_path, "r", encoding="utf-8") as file:
                 arasuji_text = file.read()
         prompt = (
-            f"以下は文脈に基づく文章生成です。あ前の文章を考慮しながら、次の文章をほぼ{next_text_length}文字で作成してください:\n"
+            f"以下は文脈に基づく文章生成です。あらすじと前の文章を考慮しながら、次の文章をほぼ{next_text_length}文字で作成してください。ただし、あらすじよりも前の文脈を優先してください。:\n"
             f"あらすじ:\n{arasuji_text}\n"  
             f"前の文章:\n{previous_text}\n"
             "次の文章:\n"

@@ -1,9 +1,34 @@
-Index: 0, Sentence: 計数工学科は、物理工学科と共に科学技術の要となる「応用物理系」を構成しています。, Is First Line: True
-Index: 1, Sentence: 数学と物理をベースに情報の概念や情報技術を加え、。, Is First Line: True
-Index: 2, Sentence: 電気・機械・材料といった個別分野に依存しない普遍的な概念や原理の提案および系統的な方法論の提供を目指しています。, Is First Line: True
-Index: 3, Sentence: 学科には、現象の本質をモデル化し問題解決手法を創り出す「数理情報工学コース」と、。, Is First Line: True
-Index: 4, Sentence: 実世界を正しく認識し望みの機能を実現する「システム情報工学コース」という互いに相補的な関係にある2つのコースがあり、。, Is First Line: True
-Index: 5, Sentence: 数理的なアプローチで、ロボット・脳科学・ナノ・バイオなど先端科学技術はもとより医用工学や金融工学など幅広い学問分野への展開に関して、。, Is First Line: True
-Index: 6, Sentence: 世界のトップレベルの研究が行われています。, Is First Line: True
-Index: 7, Sentence: 計数工学科えぐ。, Is First Line: False
-Index: 8, Sentence: 計数工学科。, Is First Line: True
+Index: 0, Sentence: いまさらいうまでもなく、仮面はどこにでもあるというものではない。, Is First Line: True, Length: 31 
+Index: 1, Sentence: 日本の祭に常に仮面が登場するわけではない。, Is First Line: False, Length: 20 
+Index: 2, Sentence: 世界に視 野を広げても、仮面を有する社会は、一部の地域にしか分布しない。, Is First Line: False, Length: 35 
+Index: 3, Sentence: オセアニアでは、メラネシアでしか、仮面はつくられていな い。, Is First Line: False, Length: 29 
+Index: 4, Sentence: アフリカなら赤道をはさんで南北に広がる熱帯雨林やウッドランド、サヴァンナ地帯だけで仮面がつくられている。, Is First Line: False, Length: 51 
+Index: 5, Sentence: 南北アメ リカやユーラシアでは広い範囲で仮面の「作と使用が確認できるが、それでもすべての社会に仮面が存在するというわけではな い。, Is First Line: False, Length: 64 
+Index: 6, Sentence: いまひとつ、仮面が農耕やシュリョウ・油焼・採集を主たる生業とする社会にはみられても、牧畜社会にはみられないという, Is First Line: False, Length: 56 
+Index: 7, Sentence: 点も忘れてはならない。, Is First Line: True, Length: 10 
+Index: 8, Sentence: いずれにせよ、仮面は、人類文化に普遍的にみられるものではけっしてない。, Is First Line: False, Length: 34 
+Index: 9, Sentence: ただ、世界の仮面の文化を広くみわたして注目されるのは、仮面の造形や仮面の制作と使用を支える組織のありかたに大きな多 様性がみられる一方で、随所に、地域や民族の違いを越えて、驚くほどよく似た慣習や倍念がみとめられるという事実である。, Is First Line: False, Length: 114 
+Index: 10, Sentence: 相 互に民族移動や文化の交流がおこったとは考えられない、遠く隔たった場所で酷似した現象がみとめられるというのは、やはり一 定の条件のもとでの人類に普遍的な思考や行動のありかたのあらわれだと考えてよい。, Is First Line: False, Length: 99 
+Index: 11, Sentence: その意味で、仮面の探求は、人間のなかに, Is First Line: False, Length: 19 
+Index: 12, Sentence: ある普遍的なもの、根源的なものの探求につながる可能性をもっている。, Is First Line: True, Length: 32 
+Index: 13, Sentence: 地域と時代を問わず、仮面に共通した特性としてあげられるのは、それがいずれも、「異界」の存在を表現したものだという点で ある。, Is First Line: False, Length: 61 
+Index: 14, Sentence: ヨーロッパでいえば、ギリシアのディオニソスの祭典に用いられた仮面から、現代のカーニヴァルに登場する異形の仮面や 魔女の仮面まで、日本でいえば、能・狂言や民俗行事のなかで用いられる神がみや死者の仮面から、現代の月光仮面（「月からの便 者」といわれる）やウルトラマン（M78星雲からやって来た人類の味方）に至るまで、仮面はつねに、時間の変わり目や危機的な状況 において、異界から一時的に来たり、人びとと交わって去っていく存在を可視化するために用いられてきた。, Is First Line: False, Length: 226 
+Index: 15, Sentence: それは、アフリカや メラネシアの端儀や成人援礼に登場する死者や精霊の仮面についてもあてはまる。, Is First Line: False, Length: 46 
+Index: 16, Sentence: そこにあるのは、異界を、山や森に設定する か、月に設定するか、あるいは宇宙の果てに設定するかの違いだけである。, Is First Line: False, Length: 54 
+Index: 17, Sentence: たしかに、知識の増大とともに、人間の知識の及ばぬ 世界＝選界は、村をとりまく山や森から、月へ、そして宇宙へと、どんどん遠くへ退いていく。, Is First Line: False, Length: 67 
+Index: 18, Sentence: しかし、世界を改変するものとし, Is First Line: False, Length: 15 
+Index: 19, Sentence: ての異界の力に対する人びとの横慣、異界からの来訪者への期待が変わることはなかったのである。, Is First Line: True, Length: 44 
+Index: 20, Sentence: ただ、忘れてならないのは、人びとはその仮面のかぶり手を、あるときは歓待し、あるときは感無し、またあるときは痛めつけ てきたということである。, Is First Line: False, Length: 69 
+Index: 21, Sentence: 仮面は異界からの来訪者を可視化するものだとはいっても、それはけっして視られるためだけのもので はない。, Is First Line: False, Length: 50 
+Index: 22, Sentence: それは、あくまでもいったん可視化した対象に人間が積極的にはたらきかけるための装置であった。, Is First Line: False, Length: 44 
+Index: 23, Sentence: 仮面は、大きな変化 や危機に際して、人間がそうした異界の力を一時的に目にみえるかたちにし、それにはたらきかけることで、その力そのものをコ ントロールしようとしてりだしてきたもののように思われる。, Is First Line: False, Length: 96 
+Index: 24, Sentence: そして、テレビの画面のなかで繰り広げられる現代の仮面のヒー, Is First Line: False, Length: 29 
+Index: 25, Sentence: ローたちの活躍もまた、それと同じ欲求に根ざしているのである。, Is First Line: True, Length: 29 
+Index: 26, Sentence: ここでは、仮面が神や霊など、異界の力を可視化し、コントロールする装置であることを強調してきた。, Is First Line: False, Length: 46 
+Index: 27, Sentence: しかし、そのような装 置は少なくとももうひとつある。, Is First Line: False, Length: 25 
+Index: 28, Sentence: 神の選、つまり淡霊である。, Is First Line: False, Length: 12 
+Index: 29, Sentence: しかも、仮面は、これまで、悪依の道具としてられること が多かった。, Is First Line: False, Length: 32 
+Index: 30, Sentence: いちいち引用の出典を記すまでもない。, Is First Line: False, Length: 17 
+Index: 31, Sentence: 仮面をかぶった踊り手には、袋が依り憑き、踊り手はその霊になりきるの だ。, Is First Line: False, Length: 35 
+Index: 32, Sentence: あるいは、仮面をかぶった踊り手はもはや仮面をかぶる前の彼ではない、それは神そのものだといった議論は、世界各地の仮, Is First Line: False, Length: 56 
+Index: 33, Sentence: 面についての民族誌のなかに数多く見いだされる。, Is First Line: True, Length: 22 

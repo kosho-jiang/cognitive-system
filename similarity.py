@@ -17,9 +17,9 @@ isbert:False -> GPT-4o-miniに丸投げして類似度を計算
 isarasuji:boolについて、あらすじを用いるかどうかのフラグ
 """
 
-def calculate_similarity(apikey, previous_texts, next_text, next_text_length, isbert, isarasuji=False):
+def calculate_similarity(apikey, previous_texts, next_text, next_text_length, isbert, isarasuji=False, arasujipath=None):
     
-    next_text_genrated = generate_next_text(apikey, previous_texts, next_text_length, isarasuji)  
+    next_text_genrated = generate_next_text(apikey, previous_texts, next_text_length, isarasuji, arasujipath)  
     print("実際の次の文章:", next_text)
     print("生成された文章:", next_text_genrated)
 

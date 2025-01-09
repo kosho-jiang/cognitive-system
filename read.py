@@ -45,7 +45,7 @@ def load_and_split_text_with_length(file_path: str, delimiter: str = "。") -> l
         return []
 
 if __name__ == "__main__":
-    file_path = "testcases/read1.txt"  # テキストファイルのパスを指定
+    file_path = "testcases/keihatu.txt"  # テキストファイルのパスを指定
 
     result = load_and_split_text_with_length(file_path)
     for item in result:
@@ -54,5 +54,5 @@ if __name__ == "__main__":
         output_file_path = "testcases/output.txt"
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             for item in result:
-                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['isfirst']}, Length: {item['length']} \n")
+                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}, Length: {item['length']} \n")
         print(f"Output written to {output_file_path}")
