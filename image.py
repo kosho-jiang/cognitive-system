@@ -34,6 +34,47 @@ def image_to_text(api_key, image_path: str) -> str:
         return str(e)
 
 if __name__ == "__main__":
-    image_path = 'testcases/onepiece.png'  # 適切な画像パスに置き換えてください
-    result = image_to_text(OpenAI_API_KEY,image_path)
-    print(result)
+    text=""
+    for i in range(1,21):
+        image_path=f"testcases/shanks/shanks_{i}.png"
+        tmp = image_to_text(OpenAI_API_KEY,image_path)
+        text += tmp
+    
+    with open("testcases/shanks/shanks_text.txt", "w", encoding="utf-8") as file:
+        file.write(text)
+
+    '''
+    lines = text.split("\n")
+    result = []
+    index = 0
+    delimiter = "。"
+    for line in lines:
+        sentences = line.split(delimiter)
+        for idx, sentence in enumerate(sentences):
+            clean_sentence = sentence.strip()
+            if clean_sentence:
+                is_first_line = idx == 0
+                sentence_length = len(clean_sentence)
+                if idx == len(sentences) - 1 and clean_sentence and delimiter not in clean_sentence:
+                    result.append({
+                        "index": index,
+                        "sentence": clean_sentence, 
+                        "is_first_line": is_first_line,
+                        "length": sentence_length
+                    })
+                else:
+                    result.append({
+                        "index": index,
+                        "sentence": clean_sentence + delimiter if delimiter not in clean_sentence else clean_sentence,
+                        "is_first_line": is_first_line,
+                        "length": sentence_length
+                    })
+                index += 1
+    
+    for item in result:
+        output_file_path = "testcases/shanks/shanks_output.txt"
+        with open(output_file_path, 'w', encoding='utf-8') as output_file:
+            for item in result:
+                output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}, Length: {item['length']} \n")
+        print(f"Output written to {output_file_path}")
+    '''
