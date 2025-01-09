@@ -39,7 +39,11 @@ if __name__ == "__main__":
         image_path=f"testcases/shanks/shanks_{i}.png"
         tmp = image_to_text(OpenAI_API_KEY,image_path)
         text += tmp
+    
+    with open("testcases/shanks/shanks_text.txt", "w", encoding="utf-8") as file:
+        file.write(text)
 
+    '''
     lines = text.split("\n")
     result = []
     index = 0
@@ -73,3 +77,4 @@ if __name__ == "__main__":
             for item in result:
                 output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}, Length: {item['length']} \n")
         print(f"Output written to {output_file_path}")
+    '''
