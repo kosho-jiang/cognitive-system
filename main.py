@@ -6,7 +6,7 @@ from read import load_and_split_text_with_length
 from estimate import generate_next_text
 from output import create_pdf   
 
-text = load_and_split_text_with_length("testcases/usakusai.txt")
+text = load_and_split_text_with_length("testcases/shanks/shanks_text.txt")
 OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]   
 
 def main (text, OpenAI_API_KEY, isarasuji, isbert):
