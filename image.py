@@ -11,12 +11,15 @@ def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
-def image_to_text(api_key, image_path: str) -> str:
+def image_to_text(api_key, image_path: str, arasuji_path: str) -> str:
     openai.api_key = api_key
     try:
         image = encode_image(image_path)
+        with open(arasuji_path, "r", encoding="utf-8") as file:
+            arasuji_text = file.read()
         prompt = (
-            f"画像は漫画の一ページです．その内容を各コマについて小説調で説明する文章を40文字程度生成してください:\n"
+            f"画像は漫画の一ページです．以下のあらすじを参考にその内容を各コマについて小説調で説明する文章を40文字程度生成してください．説明は一コマにつき一文で生成し全文を一段落にまとめて出力してください:\n"
+            f"あらすじ:\n{arasuji_text}\n" 
         )
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -37,13 +40,14 @@ if __name__ == "__main__":
     text=""
     for i in range(1,21):
         image_path=f"testcases/shanks/shanks_{i}.png"
-        tmp = image_to_text(OpenAI_API_KEY,image_path)
+        arasuji_path="testcases/shanks/shanks_arasuji.txt"
+        tmp = image_to_text(OpenAI_API_KEY,image_path,arasuji_path)
         text += tmp
     
-    with open("testcases/shanks/shanks_text.txt", "w", encoding="utf-8") as file:
+    with open("testcases/shanks/output_v2_original.txt", "w", encoding="utf-8") as file:
         file.write(text)
 
-    '''
+    
     lines = text.split("\n")
     result = []
     index = 0
@@ -72,9 +76,8 @@ if __name__ == "__main__":
                 index += 1
     
     for item in result:
-        output_file_path = "testcases/shanks/shanks_output.txt"
+        output_file_path = "testcases/shanks/output_v2.txt"
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             for item in result:
                 output_file.write(f"Index: {item['index']}, Sentence: {item['sentence']}, Is First Line: {item['is_first_line']}, Length: {item['length']} \n")
-        print(f"Output written to {output_file_path}")
-    '''
+    print(f"Output written to {output_file_path}")
