@@ -14,6 +14,7 @@ client = OpenAI()
 """isbert: boolについて、意味的埋め込みモデルを用いるか、GPTに丸投げするか分岐するフラグ
 isbert:True -> sentence-transformersを用いて意味的埋め込みを計算    
 isbert:False -> GPT-4o-miniに丸投げして類似度を計算
+isarasuji:boolについて、あらすじを用いるかどうかのフラグ
 """
 
 def calculate_similarity(apikey, previous_texts, next_text, next_text_length, isbert, isarasuji=False):
