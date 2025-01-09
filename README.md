@@ -7,7 +7,7 @@ Group10's repository
 `pip install openai`  
 `openai = 1.59.3`
 
-## set your own key as enviromental variables.
+## Set your own key as environment variables.
 
 ### MacOS
 
