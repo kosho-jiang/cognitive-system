@@ -1,0 +1,75 @@
+Scores for Different Configurations
+========================================
+
+Pattern: isarasuji=True, isbert=False
+  Line 0: Score = 0.7214908823529411
+  Line 1: Score = 0.6543300000000001
+  Line 2: Score = 0.5342899999999999
+  Line 3: Score = 0.7368600000000001
+  Line 4: Score = 0.85469
+  Line 5: Score = 0.78766
+  Line 6: Score = 0.84277
+  Line 7: Score = 1.0
+  Line 8: Score = 0.77654
+  Line 9: Score = 0.37646
+  Line 10: Score = 0.77686
+  Line 11: Score = 0.7
+  Line 12: Score = 0.41373000000000004
+  Line 13: Score = 0.77269
+  Line 14: Score = 0.757
+  Line 15: Score = 0.84133
+  Line 16: Score = 0.85
+  Line 17: Score = 0.86
+  Line 18: Score = 0.9
+  Line 19: Score = 0.6926399999999999
+  Line 20: Score = 0.85
+  Line 21: Score = 0.43000000000000005
+  Line 22: Score = 0.8765499999999999
+  Line 23: Score = 0.31525000000000003
+  Line 24: Score = 0.8765499999999999
+  Line 25: Score = 0.8765499999999999
+  Line 26: Score = 0.43579
+  Line 27: Score = 0.92759
+  Line 28: Score = 0.8
+  Line 29: Score = 0.875
+  Line 30: Score = 1.0
+  Line 31: Score = 0.8765499999999999
+  Line 32: Score = 0.63186
+  Line 33: Score = 0.63115
+
+Pattern: isarasuji=False, isbert=False
+  Line 0: Score = 0.707385588235294
+  Line 1: Score = 0.76676
+  Line 2: Score = 0.69535
+  Line 3: Score = 0.7428600000000001
+  Line 4: Score = 0.64588
+  Line 5: Score = 0.73214
+  Line 6: Score = 0.75433
+  Line 7: Score = 1.0
+  Line 8: Score = 0.56786
+  Line 9: Score = 0.65288
+  Line 10: Score = 0.8125
+  Line 11: Score = 0.57325
+  Line 12: Score = 0.70488
+  Line 13: Score = 0.6543300000000001
+  Line 14: Score = 0.6478200000000001
+  Line 15: Score = 0.75693
+  Line 16: Score = 0.8765499999999999
+  Line 17: Score = 0.8765499999999999
+  Line 18: Score = 0.8
+  Line 19: Score = 0.63476
+  Line 20: Score = 0.78453
+  Line 21: Score = 0.43211
+  Line 22: Score = 0.8765499999999999
+  Line 23: Score = 0.54766
+  Line 24: Score = 0.6941200000000001
+  Line 25: Score = 0.73212
+  Line 26: Score = 0.64707
+  Line 27: Score = 0.9
+  Line 28: Score = 0.8
+  Line 29: Score = 0.8765499999999999
+  Line 30: Score = 1.0
+  Line 31: Score = 0.65766
+  Line 32: Score = 0.5203599999999999
+  Line 33: Score = 0.68675
+
