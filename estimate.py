@@ -9,8 +9,6 @@ OpenAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 def generate_next_text(api_key, previous_text, next_text_length, isarasuji = False, arasujipath=None):
     openai.api_key = api_key
-    #arasuji_path = "testcases/aruiwa-arasuji.txt"
-    arasuji_path = "testcases/arasuji.txt"
 
     if isarasuji == False:
         prompt = (
