@@ -18,7 +18,6 @@ def main (text, OpenAI_API_KEY, isarasuji, isbert, arasujipath=None):
         else:
             previous_text_list = [item['sentence'] for item in text[0:i+1]]
             previous_texts = '。'.join(previous_text_list)
-            print(previous_texts)
             next_text_length = text[i+1]['length']            
 
             similarity = calculate_similarity(OpenAI_API_KEY, previous_texts, text[i+1]['sentence'], next_text_length,isbert, isarasuji, arasujipath)
