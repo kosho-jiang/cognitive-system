@@ -49,7 +49,6 @@ def load_and_split_text_with_length(file_path: str, delimiter: str = "。") -> l
         print(f"An unexpected error occurred: {e}")
         return []
 
-
 # パラメータ設定 　PDF上の文字の座標位置はptという単位で表される。
 PAGE_WIDTH, PAGE_HEIGHT = A4  # A4サイズ (210mm x 297mm)
 MARGIN = 20 * 2.83465  # mmをptに変換
